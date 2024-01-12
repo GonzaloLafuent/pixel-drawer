@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+}
+
+    .main{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 600px;
+            background-color: aqua;
+            padding: 15px;
+        }
+
+        .menu{
+            display: flex;
+            flex-direction: column;
+        }
+
+            .range-conteiner{
+                display: flex;
+            }

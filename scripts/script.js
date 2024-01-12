@@ -2,6 +2,9 @@ const grid = document.querySelector(".grid");
 const grid_width = 600;
 const grid_height = 600;
 
+let click = 0;
+let color = "";
+
 const range_input = document.querySelector(".range-selector");
 const range_value = document.querySelector(".range");
 
@@ -17,6 +20,20 @@ function createGrid(total_squares){
         let sketch_square = document.createElement("div");
         sketch_square.setAttribute("class","square");
         sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 1px solid grey; margin:0");
+
+        sketch_square.addEventListener("click",()=>{
+            if(click==0)
+                sketch_square.style.backgroundColor = "red";
+            click = click==0? 1:0;
+            console.log(click);
+        })
+
+        sketch_square.addEventListener("mouseover",()=>{
+            if(click==1)
+                sketch_square.style.backgroundColor = "red";
+        });
+    
+
         grid.append(sketch_square);
     }
 }

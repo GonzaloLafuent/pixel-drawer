@@ -11,13 +11,12 @@ function calcSquareSize(total_squares){
 }
 
 function createGrid(total_squares){
-    let square_size = calcSquareSize(total_squares);
+    let square_size = calcSquareSize(total_squares)-2;
     console.log(square_size);
     for (let index = 0; index<total_squares*total_squares; index++) {
         let sketch_square = document.createElement("div");
         sketch_square.setAttribute("class","square");
-        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:black ;flex-shrink: 4; color: white;")
-        sketch_square.textContent = "10";
+        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 1px solid grey; margin:0");
         grid.append(sketch_square);
     }
 }

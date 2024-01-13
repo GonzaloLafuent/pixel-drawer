@@ -10,9 +10,9 @@ const range_value = document.querySelector(".range");
 
 const color_selector = document.querySelector(".color-selector");
 
-const btn_pintar_fondo = document.querySelector(".boton-pintar-fondo");
-const btn_borrar_todo = document.querySelector(".boton-borrar-todo");
-const btn_borrar = document.querySelector(".boton-borrar");
+const btn_pintar_fondo = document.querySelector("#boton-pintar-fondo");
+const btn_borrar_todo = document.querySelector("#boton-borrar-todo");
+const btn_borrar = document.querySelector("#boton-borrar");
 
 function calcSquareSize(total_squares){
     let square_area = (grid_width * grid_height)/Math.pow(total_squares,2)
@@ -25,7 +25,7 @@ function createGrid(total_squares){
     for (let index = 0; index<total_squares*total_squares; index++) {
         let sketch_square = document.createElement("div");
         sketch_square.setAttribute("class","square");
-        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 0.1px solid grey; flex-shrink:4; margin:0");
+        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 0.1px solid grey; flex-shrink:4; margin:0, padding:0");
 
         sketch_square.addEventListener("click",()=>{
             if(click==0)
@@ -53,9 +53,9 @@ function deleteGrid(){
 }
 
 function addDragMotion(){
-    range_value.textContent = range_input.value;
+    range_value.textContent = range_input.value + "X" +range_input.value;
     range_input.addEventListener("input",(e)=>{
-        range_value.textContent = e.target.value;
+        range_value.textContent = e.target.value + "X" + e.target.value;
         deleteGrid();
         createGrid(e.target.value);
     });

@@ -1,13 +1,38 @@
+@font-face{
+    font-family: "sobiscuit";
+    src: url(/fonts/Sobiscuit.ttf);
+}
+
 body{
     margin: 0;
     background-color: #BB7169;
+    font-family: "sobiscuit";
 }
-
     .main{
         display: flex;
         justify-content: space-around;
         padding-top: 20px;
     }
+        h1{
+            font-size: 50px;
+            font-weight: bolder;
+            color: #ECD5A8;
+            text-shadow: -1px 0 #2F1D01, 0 1px #2F1D01, 1px 0 #2F1D01, 0 -1px #2F1D01;
+        }
+        h3{
+            font-size: 25px;
+            font-weight: bolder;
+            color: #ECD5A8;
+            text-shadow: -1px 0 #2F1D01, 0 1px #2F1D01, 1px 0 #2F1D01, 0 -1px #2F1D01;
+        }
+
+        .range{
+            font-weight: bolder;
+            color: #ECD5A8;
+            text-shadow: -1px 0 #2F1D01, 0 1px #2F1D01, 1px 0 #2F1D01, 0 -1px #2F1D01;
+            margin-left: 15px;
+        }
+
         .grid {
             display: flex;
             flex-wrap: wrap;
@@ -15,7 +40,7 @@ body{
             align-items: center;
             width: 600px;
             height: 600px;
-            background-color: black;
+            background-color: #2F1D01;
             padding: 8px;
             margin: 0;
         }
@@ -23,8 +48,43 @@ body{
         .menu{
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
             .range-conteiner{
                 display: flex;
             }
+
+            .color-conteiner{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+                .color-selector{
+                    background-color: transparent;
+                    width: 250px;
+                    height: 60px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+            .botones{
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                font-size: 10px;
+            }
+                .boton{
+                    width: 150px;
+                    background-color: #691400;
+                    border-color: 2px solid #2F1D01;
+                    border-radius: 15px;
+                }
+
+                #txt-boton{
+                    font-size: 15px;
+                }
+
+        
+            

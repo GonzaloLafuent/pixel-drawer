@@ -40,7 +40,9 @@ body{
             align-items: center;
             width: 600px;
             height: 600px;
-            background-color: #2F1D01;
+            background-color: #ECD5A8;
+            border: 2px solid #2F1D01;
+            border-radius: 15px;
             padding: 8px;
             margin: 0;
         }
@@ -61,6 +63,12 @@ body{
                 flex-direction: column;
                 margin-bottom: 30px;
             }
+                .color-selector-frame{
+                    background-color: #ECD5A8;
+                    border: 2px solid #2F1D01;
+                    border-radius: 15px;
+                    padding: 5px 5px 5px 5px;
+                }
                 .color-selector{
                     background-color: transparent;
                     width: 250px;
@@ -76,12 +84,19 @@ body{
                 font-size: 10px;
             }
                 .boton{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
                     width: 150px;
-                    background-color: #691400;
-                    border-color: 2px solid #2F1D01;
+                    background-color: #ECD5A8;
+                    border: 2px solid #2F1D01;
                     border-radius: 15px;
                 }
-
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
                 #txt-boton{
                     font-size: 15px;
                 }

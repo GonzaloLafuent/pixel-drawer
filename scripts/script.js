@@ -77,12 +77,18 @@ function addBotonPintarFondo(){
 }
 
 function addBotonBorrarTodo(){
-
+    btn_borrar_todo.addEventListener("click",()=>{
+        const squares_grid = document.querySelectorAll(".square");
+        squares_grid.forEach(square => {
+            square.style.backgroundColor = "white"; 
+        });
+    });
 }
 
 function addBotonBorrar(){
     btn_borrar.addEventListener("click",()=>{
         color = "white";
+        click--;
     });
 }
 

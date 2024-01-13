@@ -25,7 +25,7 @@ function createGrid(total_squares){
     for (let index = 0; index<total_squares*total_squares; index++) {
         let sketch_square = document.createElement("div");
         sketch_square.setAttribute("class","square");
-        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 1px solid grey; flex-shrink:4; margin:0");
+        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 0.1px solid grey; flex-shrink:4; margin:0");
 
         sketch_square.addEventListener("click",()=>{
             if(click==0)

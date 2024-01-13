@@ -8,6 +8,10 @@ let color = "";
 const range_input = document.querySelector(".range-selector");
 const range_value = document.querySelector(".range");
 
+const color_selector = document.querySelector(".color-selector");
+
+const btn_pintar_fondo =document.querySelector(".boton-pintar-fondo");
+
 function calcSquareSize(total_squares){
     let square_area = (grid_width * grid_height)/Math.pow(total_squares,2)
     return Math.sqrt(square_area);
@@ -23,19 +27,28 @@ function createGrid(total_squares){
 
         sketch_square.addEventListener("click",()=>{
             if(click==0)
-                sketch_square.style.backgroundColor = "red";
+                sketch_square.style.backgroundColor = color;
             click = click==0? 1:0;
             console.log(click);
         })
 
         sketch_square.addEventListener("mouseover",()=>{
             if(click==1)
-                sketch_square.style.backgroundColor = "red";
+                sketch_square.style.backgroundColor = color;
         });
     
 
         grid.append(sketch_square);
     }
+}
+
+function addBotonPintarFondo(){
+    btn_pintar_fondo.addEventListener("click",()=>{
+        const squares_grid = document.querySelectorAll(".square");
+        squares_grid.forEach(square => {
+            square.style.backgroundColor = color;
+        });
+    });
 }
 
 function deleteGrid(){
@@ -54,7 +67,26 @@ function addDragMotion(){
     });
 }
 
-createGrid(16);
-addDragMotion();
+function addColorSelectorInput(){
+    color_selector.addEventListener("input",(e)=>{
+        color = e.target.value;
+    });
+}
+
+function init(){
+    color = color_selector.value;
+    click = 0;
+
+    color_selector.value = "red";
+    range_input.value = 16;
+
+    createGrid(16); 
+    addDragMotion();
+    addColorSelectorInput();
+    addBotonPintarFondo();
+}
+
+init();
+
 
 

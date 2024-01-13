@@ -10,7 +10,9 @@ const range_value = document.querySelector(".range");
 
 const color_selector = document.querySelector(".color-selector");
 
-const btn_pintar_fondo =document.querySelector(".boton-pintar-fondo");
+const btn_pintar_fondo = document.querySelector(".boton-pintar-fondo");
+const btn_borrar_todo = document.querySelector(".boton-borrar-todo");
+const btn_borrar = document.querySelector(".boton-borrar");
 
 function calcSquareSize(total_squares){
     let square_area = (grid_width * grid_height)/Math.pow(total_squares,2)
@@ -18,12 +20,12 @@ function calcSquareSize(total_squares){
 }
 
 function createGrid(total_squares){
-    let square_size = calcSquareSize(total_squares)-2;
+    let square_size = calcSquareSize(total_squares)-2.01;
     console.log(square_size);
     for (let index = 0; index<total_squares*total_squares; index++) {
         let sketch_square = document.createElement("div");
         sketch_square.setAttribute("class","square");
-        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 1px solid grey; margin:0");
+        sketch_square.setAttribute("style","width: "+square_size+"px;height: "+square_size+"px; background-color:white ;border: 1px solid grey; flex-shrink:4; margin:0");
 
         sketch_square.addEventListener("click",()=>{
             if(click==0)
@@ -42,14 +44,6 @@ function createGrid(total_squares){
     }
 }
 
-function addBotonPintarFondo(){
-    btn_pintar_fondo.addEventListener("click",()=>{
-        const squares_grid = document.querySelectorAll(".square");
-        squares_grid.forEach(square => {
-            square.style.backgroundColor = color;
-        });
-    });
-}
 
 function deleteGrid(){
     const squares_grid = document.querySelectorAll(".square");
@@ -73,6 +67,25 @@ function addColorSelectorInput(){
     });
 }
 
+function addBotonPintarFondo(){
+    btn_pintar_fondo.addEventListener("click",()=>{
+        const squares_grid = document.querySelectorAll(".square");
+        squares_grid.forEach(square => {
+            square.style.backgroundColor = color;
+        });
+    });
+}
+
+function addBotonBorrarTodo(){
+
+}
+
+function addBotonBorrar(){
+    btn_borrar.addEventListener("click",()=>{
+        color = "white";
+    });
+}
+
 function init(){
     color = color_selector.value;
     click = 0;
@@ -84,6 +97,8 @@ function init(){
     addDragMotion();
     addColorSelectorInput();
     addBotonPintarFondo();
+    addBotonBorrarTodo();
+    addBotonBorrar();
 }
 
 init();

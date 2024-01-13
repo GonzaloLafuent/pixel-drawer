@@ -10,10 +10,13 @@ body{
         .grid {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
             width: 600px;
             height: 600px;
             background-color: black;
-            padding: 15px;
+            padding: 8px;
+            margin: 0;
         }
 
         .menu{
